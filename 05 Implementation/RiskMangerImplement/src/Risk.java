@@ -3,8 +3,8 @@ public class Risk {
     double probability;
     double consequence;
 
-   public void sendRisk() {
-
+   public Risk sendRisk() {
+return null;
    }
 
 
