@@ -6,8 +6,13 @@ public class RiskManagerControl {
         System.out.println("Hej");
     }
 
-    public Risk addRisk(){
-        return null;
+    public void addRisk(RiskTable rT){
+        if(rt==null){
+            System.out.println("No Risk Table Found!");
+        }else{
+            rt.addRisk();
+        }
+
     }
     public void sendRisk(Risk risk, String description,double probability,double consequence){
 

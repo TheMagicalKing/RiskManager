@@ -5,6 +5,12 @@ public class Risk {
    private double probability;
    private double consequence;
 
+   public Risk(){
+       description="";
+       probability=0;
+       consequence=0;
+   }
+
    public void  sendRisk( String description, double probability, double consequence) {
 
        if (probability<0||consequence<0){
