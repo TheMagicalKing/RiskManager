@@ -9,7 +9,7 @@ public class RiskManagerControl {
     public String addRisk(String Risk){
         return Risk;
     }
-    public void sendRisk(Risk, String description,double probability,double consequence){
+    public void sendRisk(String Risk, String description,double probability,double consequence){
 
     }
 
