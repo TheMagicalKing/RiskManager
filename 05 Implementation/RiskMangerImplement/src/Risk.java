@@ -1,7 +1,7 @@
 public class Risk {
-    String description;
-    double probability;
-    double consequence;
+   private String description;
+   private double probability;
+   private double consequence;
 
    public Risk sendRisk() {
 return null;
