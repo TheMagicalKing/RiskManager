@@ -3,9 +3,10 @@ public class Risk {
     double probability;
     double consequence;
 
-    void AddRisk(){
+   public void sendRisk()
 
-    }
+
+
 
 
     }
