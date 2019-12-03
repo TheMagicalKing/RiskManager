@@ -6,8 +6,8 @@ public class RiskManagerControl {
         System.out.println("Hej");
     }
 
-    public void addRisk(String Risk){
-
+    public Risk addRisk(){
+        return null;
     }
     public void sendRisk(String Risk, String description,double probability,double consequence){
 
