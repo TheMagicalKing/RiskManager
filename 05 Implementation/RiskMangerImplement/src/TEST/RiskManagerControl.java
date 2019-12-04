@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 public class RiskManagerControl extends Application {
 
-    /*private TEST.RiskTable rt = new TEST.RiskTable();
+    private TEST.RiskTable rt = new TEST.RiskTable();
 
     public void addRisk(TEST.RiskTable rT){
         if(rt==null){
@@ -16,20 +16,15 @@ public class RiskManagerControl extends Application {
         }else{
             rt.addRisk();
         }
-
     }
     public void sendRisk(TEST.Risk risk, String description,double probability,double consequence){
-
         rt.sendRisk(risk,description,probability,consequence);
-
     }
-
-     */
 
     @Override
     public void start(Stage stage) throws Exception {
         Stage window = stage;
-        window.setTitle("Maze Man");
+        window.setTitle("Risk Manager");
         window.setResizable(false);
         Group grpMainCurrent = new Group();
         Label label = new Label("xd");
