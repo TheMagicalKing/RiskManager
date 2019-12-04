@@ -27,6 +27,7 @@ public class Main extends Application {
         deleteIDtextField.setPrefWidth(25);
         Button addRiskButton = new Button("Add Risk");
         addRiskButton.setOnAction(actionEvent -> {
+            //TODO this should send the information to logic -> riskManagerController and then tell the UI table to get the risk from the logic table array-list<Risk>
             table.addRisk(countOfCancers, "cancer", 100, 420, 25, 20);
             addCountOfCancers();
         });
