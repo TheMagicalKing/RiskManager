@@ -6,6 +6,7 @@ public class RiskTable{
     private ArrayList<Risk> risks = new ArrayList<>();
 
     public Risk addRisk(){
+        //TODO this should tell the ui to add this risk to its observable list, as well as send the new risk to database
         Risk risk = new Risk();
         risks.add(risk);
         return null;
