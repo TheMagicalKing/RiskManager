@@ -1,4 +1,4 @@
-package TEST;
+package Logic;
 
 public class Risk {
    private String description;

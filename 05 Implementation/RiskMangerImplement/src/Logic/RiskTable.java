@@ -1,4 +1,4 @@
-package TEST;
+package Logic;
 
 import java.util.ArrayList;
 

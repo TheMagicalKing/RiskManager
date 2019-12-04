@@ -1,5 +1,6 @@
 module RiskManager {
     requires javafx.controls;
 
-    opens TEST;
+    opens Logic;
+    opens UI;
 }
