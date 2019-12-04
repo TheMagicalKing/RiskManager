@@ -1,3 +1,5 @@
+package TEST;
+
 import java.util.ArrayList;
 
 public class RiskTable{
@@ -11,7 +13,7 @@ public class RiskTable{
     public void sendRisk(Risk risk, String description, double probability, double consequence){
         if (risks.contains(risk)){
 
-            System.out.println("No Risk Found");
+            System.out.println("No TEST.Risk Found");
 
         }
         else{

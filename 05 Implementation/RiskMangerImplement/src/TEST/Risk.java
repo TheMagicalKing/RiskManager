@@ -1,4 +1,4 @@
-
+package TEST;
 
 public class Risk {
    private String description;
@@ -16,7 +16,7 @@ public class Risk {
        if (probability<0||consequence<0){
            System.out.println("Probability or Consequense is less than zero!");
        }else {
-           System.out.println("Risk Updated!");
+           System.out.println("TEST.Risk Updated!");
            this.description = description;
            this.probability = probability;
            this.consequence = consequence;
