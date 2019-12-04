@@ -2,7 +2,7 @@ package DATABASE;
 
 public class DB_Con {
     public static String getPassword(){
-        return "";
+        return "wowow";
     }
 
     public static String geUsername(){
