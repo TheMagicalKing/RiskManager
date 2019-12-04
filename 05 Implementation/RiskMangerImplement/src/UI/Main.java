@@ -1,11 +1,10 @@
 package UI;
 
 import javafx.application.Application;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -23,7 +22,9 @@ public class Main extends Application {
         window.setTitle("Risk Manager");
         window.setResizable(false);
         VBox grpMainCurrent = new VBox();
+        HBox toolbarHbox = new HBox();
         TextField deleteIDtextField = new TextField();
+        deleteIDtextField.setPrefWidth(25);
         Button addRiskButton = new Button("Add Risk");
         addRiskButton.setOnAction(actionEvent -> {
             table.addRisk(countOfCancers, "cancer", 100, 420, 25, 20);
@@ -33,7 +34,8 @@ public class Main extends Application {
         deleteRiskButton.setOnAction(actionEvent -> {
             table.deleteRisk(Integer.parseInt(deleteIDtextField.getText()));
         });
-        grpMainCurrent.getChildren().addAll(addRiskButton, deleteRiskButton,deleteIDtextField, table.getTable());
+        toolbarHbox.getChildren().addAll(addRiskButton,deleteRiskButton,deleteIDtextField);
+        grpMainCurrent.getChildren().addAll(toolbarHbox, table.getTable());
         window.setScene(new Scene(grpMainCurrent, 675, 250));
         window.show();
     }
