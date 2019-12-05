@@ -23,6 +23,8 @@ public class RiskTable{
         }
     }
 
+    //vi skal have en metode som henter enten en arraylist eller en  fra database
+
     //nedenstående metoder er tilføjet uden UML og er nødvendige for at UI har adgang til listen
     public ArrayList<Risk> getRisks(){
         return risks;
