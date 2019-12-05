@@ -15,7 +15,8 @@ public class RiskTable{
     //denne metode skal kalde en sql metode som opdatere en risk. vi finder id fra risken og sender det til sql metoden
     public void sendRisk(Risk risk, String description, double probability, double consequence){
         if (risks.contains(risk)){
-
+            int index = risks.indexOf(risk);
+            //kald db update metode med denne id
             risk.sendRisk(description, probability,consequence);
         }
         else{
@@ -31,6 +32,7 @@ public class RiskTable{
     }
 
     public void deleteRist(int id) {
+        //kald db delete metode med denne id
         getRisks().remove(getRisks().get(id-1));
     }
 }
