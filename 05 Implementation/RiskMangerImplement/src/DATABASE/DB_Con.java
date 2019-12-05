@@ -1,6 +1,6 @@
 package DATABASE;
 
-import javax.swing.*;
+//import javax.swing.*;
 import java.sql.*;
 
 public class DB_Con {
