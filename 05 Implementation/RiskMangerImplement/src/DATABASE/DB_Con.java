@@ -7,13 +7,13 @@ public class DB_Con {
     private static String url = "jdbc:mysql://localhost/riskmanager?ServerTimezone=UTC";
     private static String driverName = "com.mysql.jdbc.Driver";
     private static String username = "root";
-    private static String password = "nicki1119";
+    private static String password = "";
     private static Connection con;
 
 
     public static Connection getConnection() {
             try {
-                con = DriverManager.getConnection("jdbc:mysql://localhost/riskmanager?ServerTimezone=UTC", "", "");
+                con = DriverManager.getConnection("jdbc:mysql://localhost/riskmanager?ServerTimezone=UTC", "root", "");
             } catch (SQLException ex) {
                 // log an exception. fro example:
                 System.out.println("Failed to create the database connection.");
