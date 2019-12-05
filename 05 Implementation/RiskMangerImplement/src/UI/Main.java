@@ -8,6 +8,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.sql.SQLException;
+
 public class Main extends Application {
 
     Logic.RiskManagerControl controller = new Logic.RiskManagerControl();
@@ -32,7 +34,11 @@ public class Main extends Application {
         addRiskButton.setOnAction(actionEvent -> {
             //this adds a logic risk to the logic risk table. Then we sendRisk() with information based on our textFields.
             //then we call the ui table to get the logic risks within the logic risk table array-list and insert the into the table
-            controller.addRisk();
+            try {
+                controller.addRisk();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
             //this line will produce an error if a string is entered in the double fields
             controller.sendRisk(controller.getRisks().get(controller.getRisks().size()-1),descriptionTextField.getText(),Double.parseDouble(probabilityTextField.getText()),Double.parseDouble(consequenceTextField.getText()));
             table.updateRiskTable();

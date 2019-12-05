@@ -5,16 +5,19 @@ public class DB_Test {
 
     private static Statement stmt;
 
+
     public static void main(String[] args) throws SQLException {
 
-        String password = DB_Con.getPassword();
-        String username = DB_Con.getUsername();
+        String user = DB_Con.getUsername();
+        String pass = DB_Con.getPassword();
         Connection connection = DriverManager.getConnection
-                ("jdbc:mysql://localhost/riskmanager", username, password);
+                ("jdbc:mysql://localhost/riskmanager?serverTimezone=UTC", user,pass);
         System.out.println("Database connected.");
         stmt = connection.createStatement();
-       /** ResultSet s = stmt.executeQuery("select desc from risktable");
-        System.out.println(s.getString("desc"));**/
+        String queryString = "select * from risktable";
+        ResultSet s = stmt.executeQuery(queryString);
+        while (s.next())
+        System.out.println(s.getString("Prob"));
     }
 
 }

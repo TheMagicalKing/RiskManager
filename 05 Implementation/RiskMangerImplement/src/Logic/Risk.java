@@ -11,6 +11,7 @@ public class Risk {
        description="";
        probability=0;
        consequence=0;
+
    }
 
    public void  sendRisk( String description, double probability, double consequence) {

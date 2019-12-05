@@ -1,12 +1,13 @@
 package Logic;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class RiskManagerControl {
 
     private Logic.RiskTable rt = new Logic.RiskTable();
 
-    public void addRisk(){
+    public void addRisk() throws SQLException {
         if(rt==null){
             System.out.println("No TEST.Risk Table Found!");
         }else{
