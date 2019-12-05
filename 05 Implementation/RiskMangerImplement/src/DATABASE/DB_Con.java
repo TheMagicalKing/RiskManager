@@ -1,11 +1,24 @@
 package DATABASE;
 
-public class DB_Con {
-    public static String getPassword(){
-        return "";
-    }
+import javax.swing.*;
+import java.sql.*;
 
-    public static String getUsername(){
-        return "root";
+public class DB_Con {
+    private static String url = "jdbc:mysql://localhost/riskmanager?ServerTimezone=UTC";
+    private static String driverName = "com.mysql.jdbc.Driver";
+    private static String username = "root";
+    private static String password = "nicki1119";
+    private static Connection con;
+
+
+    public static Connection getConnection() {
+            try {
+                con = DriverManager.getConnection("jdbc:mysql://localhost/riskmanager?ServerTimezone=UTC", "", "");
+            } catch (SQLException ex) {
+                // log an exception. fro example:
+                System.out.println("Failed to create the database connection.");
+            }
+
+        return con;
     }
 }

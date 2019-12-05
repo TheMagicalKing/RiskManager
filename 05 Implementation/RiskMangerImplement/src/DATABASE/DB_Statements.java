@@ -5,38 +5,44 @@ import java.util.ArrayList;
 
 public class DB_Statements {
 
-    private String user = DB_Con.getUsername();
-    private String pass = DB_Con.getPassword();
+    private Connection con;
     private static Statement stmt;
     String queryString;
 
 
-    public void main(String[] args) throws SQLException {
-        Connection connection = DriverManager.getConnection
-                ("jdbc:mysql://localhost/riskmanager?serverTimezone=UTC", this.user ,this.pass);
-        System.out.println("Database connected.");
-        stmt = connection.createStatement();
-    }
+
 
     public void insertDB() throws SQLException {
+        con = DB_Con.getConnection();
 
-        queryString = "insert into risktable(`desc`, prob, conseq, expo) values ('', 0, 0, 0);";
-        stmt.executeQuery(queryString);
+        stmt = con.createStatement();
+
+        queryString = "insert into risktable(descrip, prob, conseq, expo) values ('', 0, 0, 0);";
+        stmt.execute(queryString);
+        con.close();
 
     }
     public void updateDB(int rid, String desc, int prob, int conseq) throws SQLException{
-
+        con = DB_Con.getConnection();
+        stmt = con.createStatement();
         int expo = prob*conseq;
         queryString = "update risktable set descrip = '"+desc+"', prob = "+prob+", conseq = "+conseq+", expo = "+expo+" where id = "+ rid + ";";
-        stmt.executeQuery(queryString);
+        stmt.execute(queryString);
+        con.close();
     }
     public void deleteRisk(int rid) throws SQLException {
+        con = DB_Con.getConnection();
+        stmt = con.createStatement();
         queryString = "delete from risktable where id ="+rid+";";
         stmt.executeQuery(queryString);
+        con.close();
     }
     public void showAllDB() throws SQLException {
+        con = DB_Con.getConnection();
+        stmt = con.createStatement();
         queryString = "select * from risktable";
         stmt.executeQuery(queryString);
+        con.close();
     }
 
 

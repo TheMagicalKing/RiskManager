@@ -37,13 +37,14 @@ public class Main extends Application {
             //Surrounded controller.addRisk() to comply with SQL's demands :(
             try {
                 controller.addRisk();
+                //this line will produce an error if a string is entered in the double fields
+                controller.sendRisk(controller.getRisks().get(controller.getRisks().size()-1),descriptionTextField.getText(),Double.parseDouble(probabilityTextField.getText()),Double.parseDouble(consequenceTextField.getText()));
+                table.updateRiskTable();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
 
-            //this line will produce an error if a string is entered in the double fields
-            controller.sendRisk(controller.getRisks().get(controller.getRisks().size()-1),descriptionTextField.getText(),Double.parseDouble(probabilityTextField.getText()),Double.parseDouble(consequenceTextField.getText()));
-            table.updateRiskTable();
+
         });
         Button deleteRiskButton = new Button("Delete Risk");
         deleteRiskButton.setOnAction(actionEvent -> {
