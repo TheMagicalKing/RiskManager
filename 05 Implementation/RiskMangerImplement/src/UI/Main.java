@@ -35,14 +35,16 @@ public class Main extends Application {
             //this adds a logic risk to the logic risk table. Then we sendRisk() with information based on our textFields.
             //then we call the ui table to get the logic risks within the logic risk table array-list and insert the into the table
             //Surrounded controller.addRisk() to comply with SQL's demands :(
-            try {
-                controller.addRisk();
-                //this line will produce an error if a string is entered in the double fields
-                controller.sendRisk(controller.getRisks().get(controller.getRisks().size()-1),descriptionTextField.getText(),Double.parseDouble(probabilityTextField.getText()),Double.parseDouble(consequenceTextField.getText()));
-                table.updateRiskTable();
+
+            controller.addRisk();
+            //this line will produce an error if a string is entered in the double fields
+            controller.sendRisk(controller.getRisks().get(controller.getRisks().size()-1),descriptionTextField.getText(),Double.parseDouble(probabilityTextField.getText()),Double.parseDouble(consequenceTextField.getText()));
+            table.updateRiskTable();
+            /**try {
+
             } catch (SQLException e) {
                 e.printStackTrace();
-            }
+            }**/
 
 
         });

@@ -7,7 +7,7 @@ public class RiskManagerControl {
 
     private Logic.RiskTable rt = new Logic.RiskTable();
 
-    public void addRisk() throws SQLException/** Made addRisk throw SQLException to comply with SQL's Demands :C**/ {
+    public void addRisk() /**throws SQLException Made addRisk throw SQLException to comply with SQL's Demands :C**/ {
         if(rt==null){
             System.out.println("No TEST.Risk Table Found!");
         }else{
