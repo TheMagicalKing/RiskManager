@@ -17,6 +17,13 @@ public class RiskManagerControl {
         rt.sendRisk(risk,description,probability,consequence);
     }
 
+    //denne er tilføjet, men mangler UML!
+    public void deleteRisk(int id){
+        System.out.println("This is a coming feature");
+        rt.deleteRist(id);
+    }
+
+    //denne metode skal være der for at ui har adgang til indhold i listen.
     public ArrayList<Risk> getRisks(){
         return rt.getRisks();
     }

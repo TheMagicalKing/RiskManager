@@ -21,28 +21,17 @@ public class RiskTable {
         risks.addAll(logicRisks);
     }
 
-    public void deleteRisk(int id){
-        for (Logic.Risk risk : risks){
-            if (risk.getId()==id){
-                System.out.println("we got a risk with the id:"+id);
-                risks.remove(risk);
-                break;
-            }
-            System.out.println("we did not find a risk with the id:"+id);
-        }
-        table.setItems(getRisks());
-    }
-
-    public void addRisk(/*int id, String description, int probability, int consequence, int revisedProbability, int revisedConsequence*/){
-        //for some reason this line also deletes all elements in risks list
-        //table.getItems().clear();
-        //risks.add(new Risk(id, description, probability, consequence, revisedProbability, revisedConsequence));
+    public void updateRiskTable(){
         table.setItems(getRisks());
     }
 
     public ObservableList<Logic.Risk> getRisks(){
-        risks.removeAll(logicRisks);
-        risks.addAll(logicRisks);
+        //we cant do this since to logic-risks no only is eg 2 long, while the risks is still 3 long
+        //risks.removeAll(logicRisks);
+        risks.clear();
+        System.out.println("This is the length of the UI list of risks when cleared: "+risks.size());
+        risks.addAll(main.controller.getRisks());
+        System.out.println("This is the length of the UI list of risks: "+risks.size());
         return risks;
     }
 

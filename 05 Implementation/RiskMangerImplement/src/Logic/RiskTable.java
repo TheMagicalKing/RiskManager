@@ -21,7 +21,12 @@ public class RiskTable{
         }
     }
 
+    //nedenstående metoder er tilføjet uden UML
     public ArrayList<Risk> getRisks(){
         return risks;
+    }
+
+    public void deleteRist(int id) {
+        getRisks().remove(getRisks().get(id-1));
     }
 }
