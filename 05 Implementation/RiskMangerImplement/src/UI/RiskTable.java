@@ -29,7 +29,6 @@ public class RiskTable {
         //we cant do this since to logic-risks no only is eg 2 long, while the risks is still 3 long
         //risks.removeAll(logicRisks);
         risks.clear();
-        System.out.println("This is the length of the UI list of risks when cleared: "+risks.size());
         risks.addAll(main.controller.getRisks());
         System.out.println("This is the length of the UI list of risks: "+risks.size());
         return risks;

@@ -36,14 +36,12 @@ public class Main extends Application {
             //this line will produce an error if a string is entered in the double fields
             controller.sendRisk(controller.getRisks().get(controller.getRisks().size()-1),descriptionTextField.getText(),Double.parseDouble(probabilityTextField.getText()),Double.parseDouble(consequenceTextField.getText()));
             table.updateRiskTable();
-            System.out.println("in the arraylist in riskTable are there "+controller.getRisks().size()+" risks.");
         });
         Button deleteRiskButton = new Button("Delete Risk");
         deleteRiskButton.setOnAction(actionEvent -> {
             //table.deleteRisk(Integer.parseInt(deleteIDTextField.getText()));
             controller.deleteRisk(Integer.parseInt(deleteIDTextField.getText()));
             table.updateRiskTable();
-            System.out.println("in the arraylist in riskTable are there "+controller.getRisks().size()+" risks.");
         });
         toolbarHbox.getChildren().addAll(addRiskButton, descriptionTextField, probabilityTextField, consequenceTextField,deleteRiskButton,deleteIDTextField);
         grpMainCurrent.getChildren().addAll(toolbarHbox, table.getTable());
