@@ -14,12 +14,14 @@ public class RiskTable{
     }
     public void sendRisk(Risk risk, String description, double probability, double consequence){
         if (risks.contains(risk)){
-
-            System.out.println("No TEST.Risk Found");
-
-        }
-        else{
             risk.sendRisk(description, probability,consequence);
         }
+        else{
+            System.out.println("No TEST.Risk Found");
+        }
+    }
+
+    public ArrayList<Risk> getRisks(){
+        return risks;
     }
 }

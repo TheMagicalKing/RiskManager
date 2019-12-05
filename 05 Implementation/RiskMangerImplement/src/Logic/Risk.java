@@ -1,9 +1,11 @@
 package Logic;
 
 public class Risk {
+    /*
    private String description;
    private double probability;
    private double consequence;
+     */
 
    public Risk(){
        description="";
@@ -22,6 +24,53 @@ public class Risk {
            this.consequence = consequence;
        }
    }
+   //alt det her er tilføjet, da tableview kræve særlige getters
+
+    int id;
+    String description;
+    double probability;
+    double consequence;
+    double exposure;
+    double revisedProbability;
+    double revisedConsequence;
+
+    public Risk(int id, String description, int probability, int consequence, int revisedProbability, int revisedConsequence){
+        this.id=id;
+        this.description=description;
+        this.probability=probability;
+        this.consequence=consequence;
+        this.revisedProbability=revisedProbability;
+        this.revisedConsequence=revisedConsequence;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public double getProbability() {
+        return probability;
+    }
+
+    public double getConsequence() {
+        return consequence;
+    }
+
+    public double getExposure(){
+        exposure=getProbability()*getConsequence();
+        return exposure;
+    }
+
+    public double getRevisedProbability() {
+        return revisedProbability;
+    }
+
+    public double getRevisedConsequence() {
+        return revisedConsequence;
+    }
+
+    public int getId(){
+        return id;
+    }
 }
 
 
