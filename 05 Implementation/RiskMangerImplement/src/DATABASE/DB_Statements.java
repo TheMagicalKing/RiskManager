@@ -24,10 +24,19 @@ public class DB_Statements {
         stmt.executeQuery(queryString);
 
     }
-    public void updateDB(String desc, int prob, int conseq) throws SQLException{
-        int expo = prob*conseq;
-        queryString = "update risktable set descrip = '"+desc+"', prob = "+prob+", conseq = "+conseq+", expo = "+expo+" where 'desc' like '%" + desc + "%';";
+    public void updateDB(int rid, String desc, int prob, int conseq) throws SQLException{
 
+        int expo = prob*conseq;
+        queryString = "update risktable set descrip = '"+desc+"', prob = "+prob+", conseq = "+conseq+", expo = "+expo+" where id = "+ rid + ";";
+        stmt.executeQuery(queryString);
+    }
+    public void deleteRisk(int rid) throws SQLException {
+        queryString = "delete from risktable where id ="+rid+";";
+        stmt.executeQuery(queryString);
+    }
+    public void showAllDB() throws SQLException {
+        queryString = "select * from risktable";
+        stmt.executeQuery(queryString);
     }
 
 
