@@ -2,10 +2,10 @@ package DATABASE;
 
 public class DB_Con {
     public static String getPassword(){
-        return "wowow";
+        return "nicki1119";
     }
 
-    public static String geUsername(){
+    public static String getUsername(){
         return "root";
     }
 }
