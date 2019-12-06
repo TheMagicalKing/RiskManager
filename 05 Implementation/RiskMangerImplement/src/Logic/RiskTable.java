@@ -8,11 +8,11 @@ import java.util.ArrayList;
 public class RiskTable{
     private ArrayList<Risk> risks = new ArrayList<>();
 
-    public Risk addRisk() /**throws SQLException  Made addRisk throw SQLException to comply with SQL's Demands :C**/ {
+    public Risk addRisk() throws SQLException  /*Made addRisk throw SQLException to comply with SQL's Demands :C*/ {
         //TODO this should tell the ui to add this risk to its observable list, as well as send the new risk to database
 
-        /**DB_Statements insert = new DB_Statements();
-        insert.insertDB();**/
+        DB_Statements insert = new DB_Statements();
+        insert.insertDB();
         Risk risk = new Risk();
         risks.add(risk);
         return null;

@@ -1,5 +1,9 @@
 package DATABASE;
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 
@@ -9,11 +13,9 @@ public class DB_Statements {
     private static Statement stmt;
     String queryString;
 
-
-
-
     public void insertDB() throws SQLException {
-        con = DB_Con.getConnection();
+        Connection con = null;
+        con=DriverManager.getConnection("jdbc:mysql://localhost/RiskManager?serverTimezone=UTC", "root", "qtj38gve");
 
         stmt = con.createStatement();
 
@@ -22,14 +24,17 @@ public class DB_Statements {
         con.close();
 
     }
+/*
     public void updateDB(int rid, String desc, int prob, int conseq) throws SQLException{
-        con = DB_Con.getConnection();
-        stmt = con.createStatement();
+        Connection con = null;
+        con=DriverManager.getConnection("jdbc:mysql://localhost/RiskManager?serverTimezone=UTC", "root", "qtj38gve");
+        Statement stmt2 = con.createStatement();
         int expo = prob*conseq;
         queryString = "update risktable set descrip = '"+desc+"', prob = "+prob+", conseq = "+conseq+", expo = "+expo+" where id = "+ rid + ";";
-        stmt.execute(queryString);
+        stmt2.execute(queryString);
         con.close();
     }
+
     public void deleteRisk(int rid) throws SQLException {
         con = DB_Con.getConnection();
         stmt = con.createStatement();
@@ -45,6 +50,8 @@ public class DB_Statements {
         con.close();
     }
 
+
+     */
 
 
 }

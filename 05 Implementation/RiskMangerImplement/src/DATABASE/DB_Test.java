@@ -7,12 +7,13 @@ public class DB_Test {
 
 
     public static void main(String[] args) throws SQLException {
-        /*DB_Statements insert = new DB_Statements();
-        insert.insertDB();
-        System.out.println("Alls good boss!");
+        Connection con = null;
+        con=DriverManager.getConnection("jdbc:mysql://localhost/RiskManager?serverTimezone=UTC", "root", "qtj38gve");
 
-         */
+        stmt = con.createStatement();
 
+        String queryString = "insert into risktable(descrip, prob, conseq, expo) values ('', 0, 0, 0);";
+        stmt.execute(queryString);
+        con.close();
     }
-
 }

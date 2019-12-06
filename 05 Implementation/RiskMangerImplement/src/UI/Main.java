@@ -36,17 +36,13 @@ public class Main extends Application {
             //then we call the ui table to get the logic risks within the logic risk table array-list and insert the into the table
             //Surrounded controller.addRisk() to comply with SQL's demands :(
 
-            controller.addRisk();
-            //this line will produce an error if a string is entered in the double fields
-            controller.sendRisk(controller.getRisks().get(controller.getRisks().size()-1),descriptionTextField.getText(),Double.parseDouble(probabilityTextField.getText()),Double.parseDouble(consequenceTextField.getText()));
-            table.updateRiskTable();
-            /**try {
-
+            try {
+                controller.addRisk();
             } catch (SQLException e) {
                 e.printStackTrace();
-            }**/
-
-
+            }
+            //this line will produce an error if a string is entered in the double fields
+            controller.sendRisk(controller.getRisks().get(controller.getRisks().size()-1),descriptionTextField.getText(),Double.parseDouble(probabilityTextField.getText()),Double.parseDouble(consequenceTextField.getText()));
         });
         Button deleteRiskButton = new Button("Delete Risk");
         deleteRiskButton.setOnAction(actionEvent -> {
